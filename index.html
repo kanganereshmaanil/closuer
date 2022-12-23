@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        pre{
+            font-size: 20px;
+            color: blueviolet;
+            height: 350px;
+            width: 600px;
+            border: 1px solid green;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<pre>function counter(){
+    var counter = 0;
+    function IncreaseCounter(){
+        return counter +=1;
+    };
+return IncreaseCounter;
+}
+var counter = counter()
+alert(counter());
+alert(counter());
+alert(counter());
+alert(counter());</pre>
+
+<h2> output =1
+    2
+    3
+    4
+    </h2>
+    <pre>let count = 0;
+        (function(){
+            if (count === 0){
+                let count =1;
+                console.log(count);
+            }
+            console.log(count);
+        })();</pre>
+        <h2> output =1
+            0</h2>
+<pre>for (var i=0; i < 3;i++){
+    setTimeout(function log(){
+    console.log(i);
+    } ,1000);
+}</pre>
+<h2>3
+    3
+    3
+    </h2>
+    <h3>4.write a code to calculate area of rectangle using inner function in this case outer function should accept parameter length and inner function should acceptparameter breadth</h3>
+ <pre>var length = prompt("Enter a whole number for the length of your rectangle.");
+    var width = prompt("Enter a whole number for the width of your rectangle.");
+    function area(length, width) {
+        return length * width;
+    }
+    function perimeter(length, width) {
+        return 2*( length + width);
+    }
+    
+    document.writeln('The area of your rectangle is ' + area(length, width));         
+    document.writeln('The perimeter of your rectangle is ' + perimeter(length, width));
+</pre> 
+<pre>var a = 12;
+    (function(){
+        alert(a);
+    })();</pre>
+    <h2>output = 12</h2>
+
+    <pre>var a =10;
+        var x =(function(){
+            var a = 12;
+            return function(){
+                alert(a);
+            };
+        })();
+        x();</pre>
+        <h2>output=12</h2>
+
+        <pre>var globalVar = "xyz";
+            (function outerFunc(outerArg){
+                var outerVar = 'a';
+                (function innerFunc(innerArg){
+                    var innerVar ='b';
+                    console.log(
+                        "outerArg = "+ outerArg + "\n" +
+                        "inneArg = "+ innerArg + "\n" +
+                        "outerVar = "+ outerVar + "\n" +
+                        "innerVar = "+ innerVar+ "\n" +
+                        "globalvar = "+ globalVar);
+                })(456);
+            })(123);</pre>
+            <h2>output=
+                <pre>outerArg = 123
+                    inneArg = 456
+                    outerVar = a
+                    innerVar = b
+                    globalvar = xyz
+                    </pre>
+            </h2>
+
+
+
+
+
+
+
+
+
+    <script src="main.js"></script>
+</body>
+</html>
