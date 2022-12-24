@@ -56,18 +56,39 @@ alert(counter());</pre>
     3
     </h2>
     <h3>4.write a code to calculate area of rectangle using inner function in this case outer function should accept parameter length and inner function should acceptparameter breadth</h3>
- <pre>var length = prompt("Enter a whole number for the length of your rectangle.");
-    var width = prompt("Enter a whole number for the width of your rectangle.");
-    function area(length, width) {
-        return length * width;
-    }
-    function perimeter(length, width) {
-        return 2*( length + width);
-    }
-    
-    document.writeln('The area of your rectangle is ' + area(length, width));         
-    document.writeln('The perimeter of your rectangle is ' + perimeter(length, width));
+ <pre>        function OuterFunction() {
+            let length = 20;
+            function InnerFunction() {
+                let breadth=50;
+                console,console.log(`The area of the rectangle is:->`,length*breadth);
+            }
+            return InnerFunction;
+        }
+        var innerFunc = OuterFunction();
+        innerFunc();
+
+      
+
 </pre> 
+<h2>  Output: The area of the rectangle is:-> 1000</h2>
+
+<h3>Take a variable in outer function and create an inner function to increase the counter every time it is called</h3>
+<pre>
+    function counter(){
+        var counter = 0;
+        function IncreaseCounter() {
+            return counter += 1;
+        };
+        return IncreaseCounter;
+    }
+    var counter = counter();
+    alert(counter());
+    alert(counter());
+    alert(counter());
+    alert(counter());
+</pre>
+
+
 <pre>var a = 12;
     (function(){
         alert(a);

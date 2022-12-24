@@ -29,17 +29,33 @@ for (var i=0;i<3;i++){
 }
 
 
-// var length = prompt("Enter a whole number for the length of your rectangle.");
-//         var width = prompt("Enter a whole number for the width of your rectangle.");
-//         function area(length, width) {
-//             return length * width;
-//         }
-//         function perimeter(length, width) {
-//             return 2*( length + width);
-//         }
-        
-//         document.writeln('The area of your rectangle is ' + area(length, width));         
-//         document.writeln('The perimeter of your rectangle is ' + perimeter(length, width));
+function OuterFunction() {
+    let length = 20;
+    function InnerFunction() {
+        let breadth=50;
+        console,console.log(`The area of the rectangle is:->`,length*breadth);
+    }
+    return InnerFunction;
+}
+var innerFunc = OuterFunction();
+innerFunc();
+
+
+
+function counter(){
+    var counter = 0;
+    function IncreaseCounter() {
+        return counter += 1;
+    };
+    return IncreaseCounter;
+}
+var counter = counter();
+alert(counter());
+alert(counter());
+alert(counter());
+alert(counter());
+
+
 var a = 12;
 (function(){
     alert(a);
